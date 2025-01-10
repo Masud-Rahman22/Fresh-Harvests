@@ -1,18 +1,16 @@
+import Products from "../components/ui/Products.jsx";
+import Header from "../components/shared/Header.jsx";
+import AboutUs from "../components/ui/AboutUs.jsx";
+import FruitBundle from "../components/ui/FruitBundle.jsx";
 
 
-const HomePage = async () => {
-  // const res = await fetch("https://test-project-alpha-three.vercel.app/api/v1/blogs",{
-  //   next:{
-  //     revalidate: 30,
-  //   }
-  // });
-  // const blogs = await res.json();
-  // console.log(blogs)
+export default function Home() {
   return (
-    <>
-     {/* <LatestBlogs blogs={blogs}/> */}
-    </>
+    <div className="bg-white">
+   <Header/>
+   <Products/>
+   <AboutUs/>
+   <FruitBundle/>
+    </div>
   );
-};
-
-export default HomePage;
+}
