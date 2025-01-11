@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const CustomCard = () => {
+const CustomCard = ({seeAll}) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -56,6 +56,36 @@ const CustomCard = () => {
         ))
       ) : (
         <p>Loading products...</p>
+      )}
+      {seeAll && (
+        products?.slice(8,21).map((product) => (  
+          <div
+            key={product?.id}
+            className="card bg-base-100 w-full shadow-xl flex flex-col justify-between"
+            
+          >
+            <Link href={`/products/${product?.id}`}>
+            <figure className="p-6 flex justify-center">
+              <img
+                src={product?.images[0] || "https://via.placeholder.com/150"}
+                alt={product?.productName}
+                className="rounded-2xl bg-gray-200 w-full h-60 object-cover"
+              />
+            </figure>
+            <div className="card-body items-center text-center p-4">
+              <h2 className="card-title text-[#212337] text-lg font-semibold">
+                {product?.productName}
+              </h2>
+              <p className="text-[#4A4A52] text-sm">${product?.price}/kg</p>
+              <div className="w-full mt-4">
+                <button className="btn btn-primary border-[#A6A6A6] hover:bg-[#FF6A1A] hover:border-0 hover:text-white text-[#212337] bg-[white] w-full">
+                  Add to cart
+                </button>
+              </div>
+            </div>
+            </Link>
+          </div>
+        ))
       )}
     </div>
   );

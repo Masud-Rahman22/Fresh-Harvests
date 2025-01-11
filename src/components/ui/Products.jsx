@@ -1,7 +1,10 @@
+"use client"
+import { useState } from "react";
 import CustomCard from "../shared/CustomCard";
 
 
 const Products = () => {
+    const [seeAll,setSeeAll] = useState(false)
     return (
         <div className="bg-white lg:mx-16 mx-2">
             <div className="">
@@ -22,10 +25,10 @@ const Products = () => {
 
 
             <div >
-                <CustomCard />
+                <CustomCard seeAll={seeAll}/>
 
                 <div className="flex justify-center items-center my-7">
-                <button className="btn btn-outline border-[#FF6A1A] text-[#FF6A1A] hover:bg-[#FF6A1A] hover:border-0 hover:text-white">See All Products</button>
+                <button onClick={()=>setSeeAll(true)} className="btn btn-outline border-[#FF6A1A] text-[#FF6A1A] hover:bg-[#FF6A1A] hover:border-0 hover:text-white">See All Products</button>
                 </div>
             </div>
         </div>
