@@ -5,6 +5,9 @@ import logo from "../../assets/Logo (1).png";
 import heart from "../../assets/Heart.png";
 import Image from "next/image";
 import Link from "next/link";
+import googleLogo from '../../assets/google-symbol 1.png'
+import facebookLogo from '../../assets/facebook-3-2 1.png'
+
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -32,7 +35,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-white lg:px-[90px] shadow-md">
+    <div className="bg-transparent lg:px-[90px]">
       <div className="navbar">
         {/* Navbar Start */}
         <div className="navbar-start">
@@ -132,10 +135,10 @@ const Navbar = () => {
           <div className="relative">
             <button
               onClick={toggleDropdown}
-              className="btn btn-outline md:px-7 px-5"
+              className="btn btn-outline md:px-7 px-5 text-sm font-semibold hover:bg-[#FF6A1A] hover:border-[#FF6A1A]"
               aria-label="Login Dropdown"
             >
-              Login
+              Sign In
             </button>
 
             {/* Dark Blur Background */}
@@ -149,9 +152,9 @@ const Navbar = () => {
             {/* Dropdown Content */}
             {isDropdownOpen && (
              <div
-             className={`absolute right-[600px] top-0 transform translate-x-[50%] translate-y-[25%] w-[500px] h-[600px] rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20 ${
-               isDropdownOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
-             }`}
+             className={`absolute right-[600px] top-0 transform translate-x-[20%] translate-y-[20%] w-[500px] h-[600px] rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20 ${
+              isDropdownOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
            >
            
                 <div className="p-14">
@@ -178,7 +181,7 @@ const Navbar = () => {
                               id="remember"
                               aria-describedby="remember"
                               type="checkbox"
-                              className="w-4 h-4 border border-[#FF6A1A]  rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                              className="w-4 h-4 border border-[#FF6A1A] rounded bg-[#FF6A1A] focus:ring-3 focus:ring-[#FF6A1A] dark:bg-[#FF6A1A] dark:border-[#FF6A1A] dark:focus:ring-[#FF6A1A] dark:ring-[#FF6A1A]"
                               required
                             />
                           </div>
@@ -196,37 +199,33 @@ const Navbar = () => {
                     <div className="flex items-center justify-between mt-4">
                       <button
                         type="submit"
-                        className="w-full btn mt-4 btn-primary text-white"
+                        className="w-full btn mt-4 bg-[#FF6A1A] text-white hover:bg-[#FF6A1A] hover:text-white"
                       >
                         Login
                       </button>
                     </div>
                     <div className="inline-flex items-center justify-center w-full">
                       <hr className="w-full h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
-                      <span className="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2  ">or</span>
+                      <span className="absolute px-3 font-semibold text-gray-900 -translate-x-1/2 bg-white left-1/2 text-sm">Or Sign in with</span>
                   </div>
                   </form>
                   <div className="lg:flex lg:justify-between lg:items-center">
                     <div>
-                    <button type="button" className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
-                      <svg className="w-16 h-5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
-                      <path  d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
-                      </svg>
+                    <button type="button" className="text-[#212337] font-semibold bg-white border-2 hover:bg-[#FF6A1A]/90 focus:ring-4 focus:outline-none focus:ring-[#FF6A1A]/50 rounded-lg text-lg px-8 py-2.5 text-center inline-flex items-center dark:focus:ring-[#FF6A1A]/55 me-2 mb-2 gap-3">
+                      <Image src={facebookLogo} width={20} height={20} alt="facebook logo"></Image>
                        Facebook
                       </button>
                     </div>
                     <div>
-                    <button type="button" className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2">
-                      <svg className="w-16 h-5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
-                      <path  d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z" clip-rule="evenodd"/>
-                      </svg>
+                    <button type="button" className="text-[#212337] font-semibold bg-white border-2 hover:bg-[#FF6A1A]/90 focus:ring-4 focus:outline-none focus:ring-[#FF6A1A]/50 rounded-lg text-lg px-8 py-2.5 text-center inline-flex items-center dark:focus:ring-[#FF6A1A]/55 me-2 mb-2 gap-3">
+                    <Image src={googleLogo} width={20} height={20} alt="google logo"></Image>
                        Google
                       </button>
                     </div>
                   </div>
                   <p className="mt-4 text-sm text-center text-gray-600">
                     Don't have an account?{" "}
-                    <Link href="/register" className="text-green-500">
+                    <Link href="/register" className="text-[#FF6A1A]">
                       Sign Up
                     </Link>
                   </p>
