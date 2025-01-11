@@ -21,9 +21,9 @@ const Products = () => {
             </div>
             <div className="flex justify-center mb-9 lg:space-x-8 space-x-1 mt-6">
             <button className="btn btn-info bg-[#749B3F] border-0 text-white  ]">All</button>
-            {/* <button onClick={handleFruitsProducts()} className="btn btn-outline border-[#A6A6A6] text-[#A6A6A6]">Fruits</button>
-            <button onClick={handleVegetablesProducts()} className="btn btn-outline border-[#A6A6A6] text-[#A6A6A6]">vegetables</button>
-            <button onClick={handleSaladProducts()} className="btn btn-outline border-[#A6A6A6] text-[#A6A6A6]">salad</button> */}
+            <button className="btn btn-outline hover:bg-[#749B3F] border-[#A6A6A6] text-[#A6A6A6]">Fruits</button>
+            <button className="btn btn-outline hover:bg-[#749B3F] border-[#A6A6A6] text-[#A6A6A6]">vegetables</button>
+            <button className="btn btn-outline hover:bg-[#749B3F] border-[#A6A6A6] text-[#A6A6A6]">salad</button>
             </div>
 
 

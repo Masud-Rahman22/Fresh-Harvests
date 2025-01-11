@@ -12,5 +12,4 @@ export const loginUser = async(data) => {
     
       const userInfo = await res.json();
       return userInfo;
-    return 
 };
