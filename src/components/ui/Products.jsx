@@ -5,6 +5,9 @@ import CustomCard from "../shared/CustomCard";
 
 const Products = () => {
     const [seeAll,setSeeAll] = useState(false)
+
+    
+
     return (
         <div className="bg-white lg:mx-16 mx-2">
             <div className="">
@@ -18,9 +21,9 @@ const Products = () => {
             </div>
             <div className="flex justify-center mb-9 lg:space-x-8 space-x-1 mt-6">
             <button className="btn btn-info bg-[#749B3F] border-0 text-white  ]">All</button>
-            <button className="btn btn-outline border-[#A6A6A6] text-[#A6A6A6]">Fruits</button>
-            <button className="btn btn-outline border-[#A6A6A6] text-[#A6A6A6]">vegetables</button>
-            <button className="btn btn-outline border-[#A6A6A6] text-[#A6A6A6]">salad</button>
+            {/* <button onClick={handleFruitsProducts()} className="btn btn-outline border-[#A6A6A6] text-[#A6A6A6]">Fruits</button>
+            <button onClick={handleVegetablesProducts()} className="btn btn-outline border-[#A6A6A6] text-[#A6A6A6]">vegetables</button>
+            <button onClick={handleSaladProducts()} className="btn btn-outline border-[#A6A6A6] text-[#A6A6A6]">salad</button> */}
             </div>
 
 

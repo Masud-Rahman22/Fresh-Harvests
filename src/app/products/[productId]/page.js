@@ -1,7 +1,5 @@
 import CustomCard from "@/components/shared/CustomCard";
-import RelatedProductCard from "@/components/shared/RelatedProductCard";
-import Image from "next/image";
-
+// import RelatedProductCard from "@/components/shared/RelatedProductCard";
 const ProductDetailsPage = async({params}) => {
     console.log(params?.productId)
     
@@ -20,7 +18,7 @@ const ProductDetailsPage = async({params}) => {
 
        
   return (
-    <div className='bg-white lg:px-20 px-4'>
+    <div className='bg-white lg:px-20 px-4 mt-11 lg:mt-20 md:mt-14 '>
     <section className="py-8 bg-white md:py-16 text-black antialiased">
 <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0">
  <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
@@ -194,7 +192,8 @@ const ProductDetailsPage = async({params}) => {
          </div>
 
          <div className='lg:mt-14 pb-7'>
-             <RelatedProductCard catgeoryName={categoryName}></RelatedProductCard>
+          <CustomCard></CustomCard>
+             {/* <RelatedProductCard catgeoryName={categoryName}></RelatedProductCard> */}
          </div>
      </div>
 

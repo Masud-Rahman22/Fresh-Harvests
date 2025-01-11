@@ -1,14 +1,24 @@
 'use client';
 
+import { loginUser } from '@/utils/actions/loginUser';
 import React, { useState } from 'react';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Email:', email, 'Password:', password);
+  const handleSubmit = async(data) => {
+    try {
+      const res = await loginUser(data)
+  if(res.accessToken){
+    alert(res.message);
+    localStorage.setItem('accessToken',res.accessToken);
+    router.push("/")
+  }
+    } catch (err) {
+      console.error(err.message);
+      throw new Error(err.message);
+    }
   };
 
   return (
