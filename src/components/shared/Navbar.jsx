@@ -8,17 +8,37 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isDropDownOpenForRegister, setIsDropDownOpen]
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const toggleDropdown = () => {
     setDropdownOpen((prev) => !prev);
   };
 
+  
+
   useEffect(() => {
+    
     const handleClickOutside = (event) => {
       if (!event.target.closest(".relative")) {
         setDropdownOpen(false);
       }
     };
+
+    const handleScroll = () => {
+      // Check if user has scrolled past the banner (100vh)
+      if (window.scrollY > window.innerHeight) {
+          setIsScrolled(true);
+      } else {
+          setIsScrolled(false);
+      }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+      window.removeEventListener("scroll", handleScroll);
+  };
 
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
@@ -32,7 +52,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-white lg:px-[90px] shadow-md">
+    <div className={`fixed top-0 lg:px-[90px] w-full z-50 ${isScrolled  ? "bg-white" : "bg-transparent"}`}>
       <div className="navbar">
         {/* Navbar Start */}
         <div className="navbar-start">
@@ -274,7 +294,7 @@ const Navbar = () => {
 
         <p className="mt-4 text-center text-sm text-gray-600">
           Don't have an account?{" "}
-          <Link href="/register" className="text-blue-500">
+          <Link  className="text-blue-500">
             Sign Up
           </Link>
         </p>

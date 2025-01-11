@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import bg from "../../../src/assets/Bg.png";
 import offers from "../../../src/assets/Special Offer.png";
@@ -7,7 +8,7 @@ import download_App from "../../../src/assets/Download App_.png";
 const Header = () => {
     return (
         <div
-            className="bg-cover bg-center w-full  lg:h-[880px] md:h-[600px] h-[400px] "
+            className="bg-cover bg-center w-full  lg:h-[880px] md:h-[600px] h-[400px]"
             style={{ backgroundImage: `url(${bg.src})` }}
         >
             <div className="text-black pt-16 md:pt-28 lg:pt-32">

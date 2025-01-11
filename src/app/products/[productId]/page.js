@@ -1,4 +1,5 @@
 import CustomCard from "@/components/shared/CustomCard";
+import RelatedProductCard from "@/components/shared/RelatedProductCard";
 import Image from "next/image";
 
 const ProductDetailsPage = async({params}) => {
@@ -15,6 +16,8 @@ const ProductDetailsPage = async({params}) => {
         cache: "no-store",
        });
        const productCategory = await categoryRes.json();
+       const categoryName = productCategory?.data?.categoryName
+
        
   return (
     <div className='bg-white lg:px-20 px-4'>
@@ -27,7 +30,7 @@ const ProductDetailsPage = async({params}) => {
 
    <div className="mt-6 sm:mt-8 lg:mt-0">
    <h3 className="text-xs  lg:text-lg font-bold text-[#749B3F] border lg:w-[100px] w-[160px] text-center rounded-lg bg-gray-200">
-   {productCategory?.data?.categoryName}
+   {categoryName}
          </h3>
      <h1 className="lg:text-4xl text-xl mt-4 font-semibold">
      {product?.data?.productName}
@@ -191,7 +194,7 @@ const ProductDetailsPage = async({params}) => {
          </div>
 
          <div className='lg:mt-14 pb-7'>
-             <CustomCard/>
+             <RelatedProductCard catgeoryName={categoryName}></RelatedProductCard>
          </div>
      </div>
 
