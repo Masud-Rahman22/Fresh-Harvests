@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const CustomCard = () => {
@@ -25,10 +26,13 @@ const CustomCard = () => {
     <div className="grid lg:grid-cols-4 gap-5 md:grid-cols-2 grid-cols-1">
       {products.length > 0 ? (
         products.slice(0, 8).map((product) => (
+          
           <div
             key={product?.id}
             className="card bg-base-100 w-full shadow-xl flex flex-col justify-between"
+            
           >
+            <Link href={`/products/${product?.id}`}>
             <figure className="p-6 flex justify-center">
               <img
                 src={product?.images[0] || "https://via.placeholder.com/150"}
@@ -47,6 +51,7 @@ const CustomCard = () => {
                 </button>
               </div>
             </div>
+            </Link>
           </div>
         ))
       ) : (
